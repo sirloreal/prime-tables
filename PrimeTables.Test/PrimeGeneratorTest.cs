@@ -73,6 +73,26 @@ namespace PrimeTables.Test
             Assert.AreEqual(3, result[1]);
         }
 
+        [TestMethod]
+        public void TestInputFirstTenPrimes()
+        {
+            PrimeGenerator p = new PrimeGenerator(GetNumberParam(10));
+            int[] result = p.Run();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(10, result.Length);
+            Assert.AreEqual(2, result[0]);
+            Assert.AreEqual(3, result[1]);
+            Assert.AreEqual(5, result[2]);
+            Assert.AreEqual(7, result[3]);
+            Assert.AreEqual(11, result[4]);
+            Assert.AreEqual(13, result[5]);
+            Assert.AreEqual(17, result[6]);
+            Assert.AreEqual(19, result[7]);
+            Assert.AreEqual(23, result[8]);
+            Assert.AreEqual(29, result[9]);
+        }
+
         private AlgorithmParameter<int> GetNumberParam(int value)
         {
             return new AlgorithmParameter<int>()

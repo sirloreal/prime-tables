@@ -38,11 +38,6 @@ namespace PrimeTables.NumberAlgorithms
                 results.Add(3);
             }
 
-            for (int i = 0; i < numberOfPrimes.Value; i++ )
-            {
-
-            }
-
             return results.ToArray();
         }
     }
