@@ -20,17 +20,17 @@ namespace PrimeTables.Test
         }
 
         /**
-         * The number passed to the PrimeGenerator should be > 1 and
+         * The number passed to the PrimeGenerator should be at least 1 and
          * we expect an ArgumentException to be raised when it is not
          */
         [TestMethod]
         [ExpectedException(typeof (ArgumentException))]
-        public void TestInputEqualsOne()
+        public void TestInputEqualsZero()
         {
             AlgorithmParameter<int> invalidParam = 
                 new AlgorithmParameter<int>()
                 {
-                    Value = 1
+                    Value = 0
                 };
 
             PrimeGenerator p = new PrimeGenerator(invalidParam);

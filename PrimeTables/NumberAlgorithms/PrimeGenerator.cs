@@ -20,7 +20,16 @@ namespace PrimeTables.NumberAlgorithms
 
         public override int[] Run()
         {
-            //TODO: Validate the parameter
+            //Validate the parameter
+            if(numberOfPrimes == null)
+            {
+                throw new ArgumentNullException("Paramter must not be null");
+            }
+            if(numberOfPrimes.Value < 1)
+            {
+                throw new ArgumentException("Number of primes must be greater than one");
+            }
+            
             return null;
         }
     }
