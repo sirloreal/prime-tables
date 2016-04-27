@@ -35,30 +35,29 @@ namespace PrimeTables
             while (!validInput);
 
             PrimeGenerator primeGenerator = GetPrimeGenerator(numberOfPrimes);
-            int[] listOfPrimes = primeGenerator.Run();
+            List<int> listOfPrimes = primeGenerator.Run();
 
             //Got the primes list, now produce the table:
             //First row
             Console.Write("\n|\t " + " ");
-            for (int i = 0; i < listOfPrimes.Length; i++)
+            for (int i = 0; i < listOfPrimes.Count; i++)
             {
-                Console.Write("|\t" + listOfPrimes[i] + " ");
+                Console.Write("|\t{0} ", listOfPrimes[i]);
             }
             Console.Write("|"); 
 
             //Now do all remaining rows
             //For each row, loop through the prime list and perform multiplication as you go
-            for(int i=0; i< listOfPrimes.Length; i++)
+            for(int i=0; i< listOfPrimes.Count; i++)
             {
-                Console.Write("\n|\t" + listOfPrimes[i] + " ");
-                for(int j=0; j< listOfPrimes.Length; j++)
+                Console.Write("\n|\t{0} ", listOfPrimes[i]);
+                for(int j=0; j< listOfPrimes.Count; j++)
                 {
-                    Console.Write("|\t" + listOfPrimes[i] * listOfPrimes[j] + " ");
+                    Console.Write("|\t{0} ",listOfPrimes[i] * listOfPrimes[j]);
                 }
 
                 Console.Write("|");
-            }
-            
+            }           
 
             Console.WriteLine("\n\nPress any key to quit...");
             Console.ReadKey();

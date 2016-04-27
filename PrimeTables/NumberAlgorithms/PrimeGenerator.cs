@@ -18,7 +18,7 @@ namespace PrimeTables.NumberAlgorithms
             this.numberOfPrimes = numberOfPrimes;
         }
 
-        public override int[] Run()
+        public override List<int> Run()
         {
             List<int> results = new List<int>();
             //Validate the parameter
@@ -66,7 +66,7 @@ namespace PrimeTables.NumberAlgorithms
                 nextPrime += 2;
             }
 
-            return results.ToArray();
+            return results;
         }
     }
 }

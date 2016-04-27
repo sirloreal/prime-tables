@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PrimeTables.NumberAlgorithms;
+using System.Collections.Generic;
 
 namespace PrimeTables.Test
 {
@@ -15,7 +16,7 @@ namespace PrimeTables.Test
         public void TestNullInput()
         {
             PrimeGenerator p = new PrimeGenerator(null);
-            int[] result = p.Run();
+            List<int> result = p.Run();
         }
 
         /**
@@ -27,7 +28,7 @@ namespace PrimeTables.Test
         public void TestInputEqualsZero()
         {
             PrimeGenerator p = new PrimeGenerator(GetNumberParam(0));
-            int[] result = p.Run();
+            List<int> result = p.Run();
         }
 
         /**
@@ -39,7 +40,7 @@ namespace PrimeTables.Test
         public void TestNegativeInput()
         {
             PrimeGenerator p = new PrimeGenerator(GetNumberParam(-1));
-            int[] result = p.Run();
+            List<int> result = p.Run();
         }
 
         /**
@@ -50,10 +51,10 @@ namespace PrimeTables.Test
         public void TestInputOneGivesOnlyTwo()
         {
             PrimeGenerator p = new PrimeGenerator(GetNumberParam(1));
-            int[] result = p.Run();
+            List<int> result = p.Run();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(1, result.Count);
             Assert.AreEqual(2, result[0]);
         }
 
@@ -65,10 +66,10 @@ namespace PrimeTables.Test
         public void TestInputTwoGivesTwoAndThree()
         {
             PrimeGenerator p = new PrimeGenerator(GetNumberParam(2));
-            int[] result = p.Run();
+            List<int> result = p.Run();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Length);
+            Assert.AreEqual(2, result.Count);
             Assert.AreEqual(2, result[0]);
             Assert.AreEqual(3, result[1]);
         }
@@ -77,10 +78,10 @@ namespace PrimeTables.Test
         public void TestInputFirstTenPrimes()
         {
             PrimeGenerator p = new PrimeGenerator(GetNumberParam(10));
-            int[] result = p.Run();
+            List<int> result = p.Run();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(10, result.Length);
+            Assert.AreEqual(10, result.Count);
             Assert.AreEqual(2, result[0]);
             Assert.AreEqual(3, result[1]);
             Assert.AreEqual(5, result[2]);
