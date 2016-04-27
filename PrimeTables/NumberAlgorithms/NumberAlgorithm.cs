@@ -8,6 +8,6 @@ namespace PrimeTables.NumberAlgorithms
 {
     public abstract class NumberAlgorithm
     { 
-        public abstract int[] Run();
+        public abstract List<int> Run();
     }
 }
