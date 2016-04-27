@@ -46,7 +46,9 @@ namespace PrimeTables.NumberAlgorithms
             {
                 bool isPrime = true;            
         
-                //TODO: Are there any possible pitfalls or missing numbers when using the results set for dividing?
+                //Are there any possible pitfalls or missing numbers when using the results set for dividing?
+                //Answer: I don't think so, since we are only testing odd numbers and any previously discarded candidates
+                //are already deemed divisible, so we only need to check against a smaller factor.
                 foreach (int n in results)
                 {
                     if (nextPrime % n == 0)
