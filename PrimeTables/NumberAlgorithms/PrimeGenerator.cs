@@ -20,6 +20,7 @@ namespace PrimeTables.NumberAlgorithms
 
         public override int[] Run()
         {
+            List<int> results = new List<int>();
             //Validate the parameter
             if(numberOfPrimes == null)
             {
@@ -30,9 +31,19 @@ namespace PrimeTables.NumberAlgorithms
                 throw new ArgumentException("Number of primes must be greater than one");
             }
             
+            //2 and 3 are known to be prime
+            results.Add(2);
+            if (numberOfPrimes.Value > 1)
+            {
+                results.Add(3);
+            }
 
+            for (int i = 0; i < numberOfPrimes.Value; i++ )
+            {
 
-            return null;
+            }
+
+            return results.ToArray();
         }
     }
 }

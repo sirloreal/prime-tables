@@ -57,6 +57,22 @@ namespace PrimeTables.Test
             Assert.AreEqual(2, result[0]);
         }
 
+        /**
+         * Tests that if we ask for the first 2 prime numbers that we get two 
+         * and three back 
+         */
+        [TestMethod]
+        public void TestInputTwoGivesTwoAndThree()
+        {
+            PrimeGenerator p = new PrimeGenerator(GetNumberParam(2));
+            int[] result = p.Run();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Length);
+            Assert.AreEqual(2, result[0]);
+            Assert.AreEqual(3, result[1]);
+        }
+
         private AlgorithmParameter<int> GetNumberParam(int value)
         {
             return new AlgorithmParameter<int>()
