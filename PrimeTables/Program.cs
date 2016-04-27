@@ -23,7 +23,7 @@ namespace PrimeTables
                 Console.WriteLine("Please enter the number of primes you require:");
                 string input = Console.ReadLine();                
 
-                if (Int32.TryParse(input, out numberOfPrimes))
+                if (Int32.TryParse(input, out numberOfPrimes) && numberOfPrimes>=1)
                 {
                     validInput = true;
                 }
