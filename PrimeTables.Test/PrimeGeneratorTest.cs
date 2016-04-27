@@ -13,7 +13,7 @@ namespace PrimeTables.Test
          */
         [TestMethod]
         [ExpectedException(typeof (ArgumentException))]
-        public void Test()
+        public void TestInputEqualsOne()
         {
             AlgorithmParameter<int> invalidParam = 
                 new AlgorithmParameter<int>()
