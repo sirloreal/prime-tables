@@ -54,5 +54,26 @@ namespace PrimeTables.Test
             PrimeGenerator p = new PrimeGenerator(invalidParam);
             int[] result = p.Run();
         }
+
+        /**
+         * Tests that if we ask for the first prime number that we get two 
+         * back and no other numbers
+         */
+        [TestMethod]
+        public void TestInputOneGivesOnlyTwo()
+        {
+            AlgorithmParameter<int> firstPrime =
+                new AlgorithmParameter<int>()
+                {
+                    Value = 1
+                };
+
+            PrimeGenerator p = new PrimeGenerator(firstPrime);
+            int[] result = p.Run();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(2, result[0]);
+        }
     }
 }

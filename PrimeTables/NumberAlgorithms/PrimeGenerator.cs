@@ -30,6 +30,8 @@ namespace PrimeTables.NumberAlgorithms
                 throw new ArgumentException("Number of primes must be greater than one");
             }
             
+
+
             return null;
         }
     }
