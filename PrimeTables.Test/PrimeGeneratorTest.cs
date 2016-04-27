@@ -14,8 +14,7 @@ namespace PrimeTables.Test
         [ExpectedException(typeof (ArgumentNullException))]
         public void TestNullInput()
         {
-            AlgorithmParameter<int> invalidParam = null;
-            PrimeGenerator p = new PrimeGenerator(invalidParam);
+            PrimeGenerator p = new PrimeGenerator(null);
             int[] result = p.Run();
         }
 
@@ -27,13 +26,7 @@ namespace PrimeTables.Test
         [ExpectedException(typeof (ArgumentException))]
         public void TestInputEqualsZero()
         {
-            AlgorithmParameter<int> invalidParam = 
-                new AlgorithmParameter<int>()
-                {
-                    Value = 0
-                };
-
-            PrimeGenerator p = new PrimeGenerator(invalidParam);
+            PrimeGenerator p = new PrimeGenerator(GetNumberParam(0));
             int[] result = p.Run();
         }
 
@@ -45,13 +38,7 @@ namespace PrimeTables.Test
         [ExpectedException(typeof (ArgumentException))]
         public void TestNegativeInput()
         {
-            AlgorithmParameter<int> invalidParam =
-                new AlgorithmParameter<int>()
-                {
-                    Value = -1
-                };
-
-            PrimeGenerator p = new PrimeGenerator(invalidParam);
+            PrimeGenerator p = new PrimeGenerator(GetNumberParam(-1));
             int[] result = p.Run();
         }
 
@@ -62,18 +49,20 @@ namespace PrimeTables.Test
         [TestMethod]
         public void TestInputOneGivesOnlyTwo()
         {
-            AlgorithmParameter<int> firstPrime =
-                new AlgorithmParameter<int>()
-                {
-                    Value = 1
-                };
-
-            PrimeGenerator p = new PrimeGenerator(firstPrime);
+            PrimeGenerator p = new PrimeGenerator(GetNumberParam(1));
             int[] result = p.Run();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Length);
             Assert.AreEqual(2, result[0]);
+        }
+
+        private AlgorithmParameter<int> GetNumberParam(int value)
+        {
+            return new AlgorithmParameter<int>()
+            {
+                Value = value
+            };
         }
     }
 }
