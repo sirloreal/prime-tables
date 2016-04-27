@@ -20,6 +20,7 @@ namespace PrimeTables.NumberAlgorithms
 
         public override int[] Run()
         {
+            //TODO: Validate the parameter
             return null;
         }
     }
